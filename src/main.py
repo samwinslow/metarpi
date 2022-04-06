@@ -8,6 +8,6 @@ display = sh1106.SH1106_I2C(128, 64, i2c, None, 0x3C)
 
 display.init_display()
 display.poweron()
-display.line(0,0,40,40,1)
-display.text("Hello", 0, 0)
+# display.line(0,0,40,40,1)
+display.text("METAR Viewer Demo", 0, 0)
 display.show()
