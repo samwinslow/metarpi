@@ -1,9 +1,6 @@
-import sys
-sys.path.append("..")
-
 import board
 import busio
-from lib import sh1106
+import sh1106
 
 i2c = busio.I2C(board.SCL, board.SDA)
 
