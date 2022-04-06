@@ -103,11 +103,11 @@ class SH1106(framebuf.FrameBuffer):
             # compatible with byte-for-byte remapping to the display buffer,
             # which is in VLSB. Else we'd have to copy bit-by-bit!
             super().__init__(self.renderbuf, self.height, self.width,
-                             framebuf.MONO_HMSB)
+                             framebuf.GS4_HMSB)
         else:
             self.displaybuf = self.renderbuf
             super().__init__(self.renderbuf, self.width, self.height,
-                             framebuf.MONO_VLSB)
+                             framebuf.MVLSB)
 
         # flip() was called rotate() once, provide backwards compatibility.
         self.rotate = self.flip
