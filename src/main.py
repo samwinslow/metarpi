@@ -2,8 +2,7 @@ import board
 import busio
 from Adafruit_SSD1306 import SSD1306_128_64
 
-# i2c = busio.I2C(board.SCL, board.SDA)
-disp = SSD1306_128_64(None)
+disp = SSD1306_128_64(None, i2c_address=0x3D)
 
 disp.begin()
 disp.clear()
