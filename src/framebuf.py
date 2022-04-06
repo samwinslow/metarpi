@@ -147,12 +147,12 @@ class FrameBuffer:
             c = ord(char)
             if c < 32 or c > 127:
                 c = 127
-            # get char data
-            char_data = font_petme128_8x8[(c - 32) * 8]
+            # get char offset
+            i = (c - 32) * 8
             # loop over char data
             for j in range(0, 8):
                 if 0 <= x0 and x0 < self.width: # clip x
-                    vline_data = char_data[j] # each byte is a column of 8 pixels, LSB at top
+                    vline_data = font_petme128_8x8[i + j] # each byte is a column of 8 pixels, LSB at top
                 y = y0
                 while vline_data: # scan over vertical column
                     if vline_data & 1: # only draw if pixel set
