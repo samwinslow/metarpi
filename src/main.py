@@ -1,9 +1,12 @@
+import sys
+sys.path.append("..")
+
 import board
 import busio
-from Adafruit_SSD1306 import SSD1306_128_64
+from lib import sh1106
 
-disp = SSD1306_128_64(None, i2c_address=0x78)
+i2c = busio.I2C(board.SCL, board.SDA)
 
-disp.begin()
-disp.clear()
-disp.display()
+display = sh1106.SH1106_I2C(128, 64, i2c, None, 0x3C)
+
+display.init_display()
