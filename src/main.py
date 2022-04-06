@@ -1,9 +1,9 @@
 import board
 import busio
-import Adafruit_SSD1306
+from Adafruit_SSD1306 import SSD1306_128_64
 
 i2c = busio.I2C(board.SCL, board.SDA)
-oled = Adafruit_SSD1306(128, 64, i2c)
+oled = SSD1306_128_64(i2c=i2c)
 
 oled.fill(1)
 oled.show()
